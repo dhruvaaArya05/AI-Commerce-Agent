@@ -470,6 +470,7 @@ addToCart	        Add products to the customer's cart
 These tools allow the AI to perform actions rather than simply respond with generated text.
 
 🛒 Example End-to-End Flow
+```
 Step 1 — Discover
 User:
 "What all products do you have?"
@@ -507,17 +508,21 @@ Orders
 Product Intelligence
 Campaign Opportunities
 Audit Trail
-
+```
 # 🧪 Running the Project Locally
+```
 1. Clone the repository
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd <PROJECT_FOLDER>
+
 2. Install frontend dependencies
 cd frontend
 npm install
+
 3. Install backend dependencies
 cd ../backend
 npm install
+
 4. Configure environment variables
 
 Create a .env file in the backend:
@@ -541,34 +546,35 @@ http://localhost:4000
 6. Start frontend
 cd frontend
 npm run dev
-
+```
 # 🔑 Environment Variables
-Variable	Description
-MONGO_URI	MongoDB connection string
-RAZORPAY_KEY_ID	Razorpay Test Mode Key ID
+```
+Variable            Description
+MONGO_URI	        MongoDB connection string
+RAZORPAY_KEY_ID	    Razorpay Test Mode Key ID
 RAZORPAY_KEY_SECRET	Razorpay Test Mode secret
-PORT	Backend server port
-
+PORT	            Backend server port
+```
 # 🧪 Testing
 
 The complete application can be tested using the following flow:
 
-✓ Product discovery
-✓ AI recommendations
-✓ Product details
-✓ Stock checking
-✓ Add to cart through UI
-✓ Add to cart through AI
-✓ Cart synchronization
-✓ Conversational checkout
-✓ Razorpay Test Mode
-✓ Payment verification
-✓ Successful order creation
-✓ Cart clearing
-✓ Payment failure handling
-✓ Merchant dashboard
-✓ Revenue/order information
-✓ Audit trail
+- ✓ Product discovery
+- ✓ AI recommendations
+- ✓ Product details
+- ✓ Stock checking
+- ✓ Add to cart through UI
+- ✓ Add to cart through AI
+- ✓ Cart synchronization
+- ✓ Conversational checkout
+- ✓ Razorpay Test Mode
+- ✓ Payment verification
+- ✓ Successful order creation
+- ✓ Cart clearing
+- ✓ Payment failure handling
+- ✓ Merchant dashboard
+- ✓ Revenue/order information
+- ✓ Audit trail
 
 Razorpay Test Mode provides simulated transactions and does not involve real money.
 
