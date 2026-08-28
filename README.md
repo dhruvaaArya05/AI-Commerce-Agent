@@ -143,7 +143,7 @@ The AI retrieves the current cart state.
 UI + AI Synchronization
 
 The cart is synchronized between:
-
+```
 AI Agent
     ↓
 Backend Cart API
@@ -151,6 +151,7 @@ Backend Cart API
 Database
     ↓
 Customer UI
+```
 
 So adding a product through the AI or through the Add to Cart button updates the same underlying cart.
 
@@ -164,7 +165,7 @@ User:
 "Proceed to checkout."
 
 The application then moves from:
-
+```
 Conversation
       ↓
 Cart
@@ -174,7 +175,7 @@ Checkout
 Payment
       ↓
 Order
-
+```
 This creates an in-app conversational commerce experience rather than requiring the customer to manually navigate through multiple pages.
 
 # 💰 Razorpay Test Mode Integration
@@ -184,7 +185,7 @@ ShopAI integrates Razorpay Test Mode for the payment flow.
 Razorpay provides separate Test and Live modes, with Test Mode using separate API keys and simulated transactions.
 
 Our payment flow is:
-
+```
 Customer
    ↓
 AI initiates checkout
@@ -213,7 +214,7 @@ Payment verified?
       Clear Cart
           ↓
       AI confirms order to Customer
-
+```
 The backend creates the Razorpay order before checkout, following Razorpay's recommended order flow.
 
 After checkout, the returned payment information is verified server-side using the Razorpay signature before the application treats the payment as successful.
@@ -246,7 +247,7 @@ Razorpay specifically recommends server-side signature verification before fulfi
 Money-related operations are treated differently from normal conversational responses.
 
 For example:
-
+```
 AI requests checkout
         ↓
 Backend validates cart
@@ -260,7 +261,7 @@ Backend verifies payment
 Order confirmed
         ↓
 Audit event recorded
-
+```
 This means the AI cannot simply say:
 
 "Payment successful"
@@ -318,7 +319,7 @@ Commerce actions go through backend functions/tools such as:
 Payment-related actions are additionally protected by backend validation and Razorpay verification.
 
 For example, adding a product to the cart checks:
-
+```
 Product exists?
        ↓
 Enough stock?
@@ -326,7 +327,7 @@ Enough stock?
 Update cart
        ↓
 Track event
-
+```
 Similarly, payment completion requires successful verification before the order is finalized.
 
 # ❌ Failure Handling
@@ -334,7 +335,7 @@ Similarly, payment completion requires successful verification before the order 
 The system also handles failure paths.
 
 For example:
-
+```
 Payment initiated
       ↓
 Payment cancelled / failed
@@ -344,7 +345,7 @@ Order NOT treated as successfully paid
 Customer receives failure state
       ↓
 Cart remains available
-
+```
 This prevents a failed payment from accidentally becoming a successful order.
 
 # 📈 Merchant Intelligence Dashboard
@@ -374,7 +375,7 @@ to:
 The merchant dashboard provides an area for AI-generated campaign opportunities.
 
 These can be used to identify potential growth actions such as:
-
+```
 Product promotion
         ↓
 Cross-selling
@@ -382,7 +383,7 @@ Cross-selling
 Customer targeting
         ↓
 Campaign opportunity
-
+```
 This connects the transaction layer with the merchant revenue-growth side of the problem statement.
 
 # 🏗️ Architecture
@@ -459,13 +460,13 @@ Development
 🔧 Agent Tools
 
 The agent can interact with the commerce backend through dedicated tools.
-
-Tool	Purpose
-searchProducts	Search the product catalog
-checkStock	Check product availability
-getProductDetails	Retrieve product information
-addToCart	Add products to the customer's cart
-
+```
+Tool	            Purpose
+searchProducts	    Search the product catalog
+checkStock	        Check product availability
+getProductDetails   Retrieve product information
+addToCart	        Add products to the customer's cart
+```
 These tools allow the AI to perform actions rather than simply respond with generated text.
 
 🛒 Example End-to-End Flow
@@ -583,7 +584,7 @@ Razorpay Test Mode provides simulated transactions and does not involve real mon
 # 🎥 Demo Flow
 
 The recommended demonstration is:
-
+```
 Customer
    ↓
 "What all products do you have?"
@@ -613,7 +614,7 @@ Merchant Dashboard
 Revenue / Orders
    ↓
 Audit Trail
-
+```
 The demo demonstrates the complete AI buyer → merchant transaction loop rather than isolated features.
 
 # 🔮 Future Improvements
