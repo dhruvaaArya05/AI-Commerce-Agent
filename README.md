@@ -1,8 +1,8 @@
-🤖 ShopAI — AI-Powered Agentic Commerce
+# 🤖 ShopAI — AI-Powered Agentic Commerce
 
 An AI shopping agent that makes merchants directly transactable by AI buyers — from product discovery to cart, checkout, payment, order completion, and merchant intelligence.
 
-🏆 Razorpay Track 01 — AI Growth & Agentic Commerce
+# 🏆 Razorpay Track 01 — AI Growth & Agentic Commerce
 
 ShopAI is an AI-powered commerce agent that connects the customer and merchant sides of commerce through a single intelligent workflow.
 
@@ -14,7 +14,7 @@ The goal is simple:
 
 Make a merchant transactable by an AI buyer end-to-end while keeping every money action explainable, bounded, and gated.
 
-🎯 Problem
+# 🎯 Problem
 
 Traditional e-commerce requires customers to manually:
 
@@ -31,7 +31,7 @@ At the same time, merchants need better ways to understand customer activity and
 
 ShopAI addresses both sides through an agentic commerce architecture.
 
-💡 What ShopAI Does
+# 💡 What ShopAI Does
 Customer / AI Buyer
 
 The customer can simply talk to the AI:
@@ -61,7 +61,7 @@ Campaign opportunities
 Commerce activity
 Payment/order events
 Audit trail for money-related actions
-🚀 Core Features
+## 🚀 Core Features
 1. 🤖 Agent-Readable Product Catalog
 
 The AI can query the merchant's product catalog and understand:
@@ -84,7 +84,7 @@ AI:
 
 The catalog is backed by the application's product database rather than being a static response.
 
-2. 🛍️ AI Product Discovery
+## 2. 🛍️ AI Product Discovery
 
 Customers can discover products using natural language.
 
@@ -100,7 +100,7 @@ Examples:
 
 The agent interprets the customer's intent and uses available product information to provide relevant results.
 
-3. ✨ AI Recommendations
+## 3. ✨ AI Recommendations
 
 The agent can recommend products based on:
 
@@ -119,7 +119,7 @@ User:
 
 AI:
 "Based on your requirement, I recommend the Dumbbell Set..."
-4. 🛒 Conversational Cart
+## 4. 🛒 Conversational Cart
 
 Customers can manage their cart directly through conversation.
 
@@ -153,7 +153,7 @@ Customer UI
 
 So adding a product through the AI or through the Add to Cart button updates the same underlying cart.
 
-💳 Conversational Checkout
+## 💳 Conversational Checkout
 
 The customer can initiate checkout directly through the AI.
 
@@ -176,7 +176,7 @@ Order
 
 This creates an in-app conversational commerce experience rather than requiring the customer to manually navigate through multiple pages.
 
-💰 Razorpay Test Mode Integration
+# 💰 Razorpay Test Mode Integration
 
 ShopAI integrates Razorpay Test Mode for the payment flow.
 
@@ -206,7 +206,7 @@ After checkout, the returned payment information is verified server-side using t
 
 No real money is involved. The project uses Razorpay Test Mode for demonstration and development.
 
-🔐 Payment Security
+# 🔐 Payment Security
 
 The payment flow does not trust the frontend alone.
 
@@ -227,7 +227,7 @@ Record the successful payment event
 
 Razorpay specifically recommends server-side signature verification before fulfilling an order.
 
-🧾 Explainable Money Actions
+# 🧾 Explainable Money Actions
 
 Money-related operations are treated differently from normal conversational responses.
 
@@ -255,7 +255,7 @@ and cause the system to trust that statement.
 
 The actual payment state comes from the backend/payment verification flow.
 
-📋 Audit Trail
+# 📋 Audit Trail
 
 ShopAI maintains an audit trail for important commerce and money-related events.
 
@@ -290,7 +290,7 @@ When did it happen?
 
 This addresses the requirement that money actions should be explainable and traceable rather than hidden inside the AI agent.
 
-🛡️ Bounded & Gated Agent Actions
+# 🛡️ Bounded & Gated Agent Actions
 
 The AI is not given unrestricted access to the database.
 
@@ -315,7 +315,7 @@ Track event
 
 Similarly, payment completion requires successful verification before the order is finalized.
 
-❌ Failure Handling
+# ❌ Failure Handling
 
 The system also handles failure paths.
 
@@ -333,7 +333,7 @@ Cart remains available
 
 This prevents a failed payment from accidentally becoming a successful order.
 
-📈 Merchant Intelligence Dashboard
+# 📈 Merchant Intelligence Dashboard
 
 The merchant dashboard provides a second perspective of the same commerce system.
 
@@ -355,7 +355,7 @@ to:
 
 "Here is what my commerce data is telling me to do next."
 
-✨ Campaign Opportunities
+# ✨ Campaign Opportunities
 
 The merchant dashboard provides an area for AI-generated campaign opportunities.
 
@@ -371,7 +371,8 @@ Campaign opportunity
 
 This connects the transaction layer with the merchant revenue-growth side of the problem statement.
 
-🏗️ Architecture
+# 🏗️ Architecture
+
                     ┌──────────────────────┐
                     │      Customer        │
                     │   AI Shopping UI     │
@@ -408,27 +409,34 @@ This connects the transaction layer with the merchant revenue-growth side of the
                     │ Revenue + Intelligence│
                     │ + Audit Trail         │
                     └──────────────────────┘
-🧰 Tech Stack
+# 🧰 Tech Stack
 Frontend
+
 React.js
 JavaScript
 CSS
 Lucide React
+
 Backend
+
 Node.js
 Express.js
 Database
 MongoDB
 Mongoose
+
 AI
+
 LLM-powered agent
 Function/tool calling
 Product and commerce tools
+
 Payments
 Razorpay Test Mode
 Razorpay Orders API
 Razorpay Checkout
 Server-side payment signature verification
+
 Development
 Git
 GitHub
@@ -516,13 +524,15 @@ http://localhost:4000
 6. Start frontend
 cd frontend
 npm run dev
-🔑 Environment Variables
+
+# 🔑 Environment Variables
 Variable	Description
 MONGO_URI	MongoDB connection string
 RAZORPAY_KEY_ID	Razorpay Test Mode Key ID
 RAZORPAY_KEY_SECRET	Razorpay Test Mode secret
 PORT	Backend server port
-🧪 Testing
+
+# 🧪 Testing
 
 The complete application can be tested using the following flow:
 
@@ -545,7 +555,7 @@ The complete application can be tested using the following flow:
 
 Razorpay Test Mode provides simulated transactions and does not involve real money.
 
-🔒 Security Notes
+# 🔒 Security Notes
 Razorpay secrets are stored server-side.
 Test keys are used for development/demo.
 Payment signatures are verified on the backend.
@@ -553,7 +563,8 @@ Stock is validated before adding products.
 Payment success is not trusted from the frontend alone.
 Failed payments do not automatically become successful orders.
 .env files should never be committed.
-🎥 Demo Flow
+
+# 🎥 Demo Flow
 
 The recommended demonstration is:
 
@@ -589,7 +600,7 @@ Audit Trail
 
 The demo demonstrates the complete AI buyer → merchant transaction loop rather than isolated features.
 
-🔮 Future Improvements
+# 🔮 Future Improvements
 
 Potential extensions include:
 
@@ -606,5 +617,3 @@ More payment methods
 Built for Razorpay Hackathon — Track 01: AI Growth & Agentic Commerce
 
 “An end-to-end agentic commerce prototype where the AI can discover products, take bounded commerce actions, complete a verified Razorpay Test Mode transaction, and expose the resulting merchant activity through an intelligence dashboard and audit trail.”
-
-That is technically credible and maps very closely to the Razorpay track.
