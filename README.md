@@ -18,12 +18,12 @@ Make a merchant transactable by an AI buyer end-to-end while keeping every money
 
 Traditional e-commerce requires customers to manually:
 
-Browse products
-Search and filter
-Compare products
-Add products to cart
-Navigate to checkout
-Complete payment
+- Browse products
+- Search and filter
+- Compare products
+- Add products to cart
+- Navigate to checkout
+- Complete payment
 
 This creates friction between customer intent and transaction.
 
@@ -54,25 +54,26 @@ Merchant
 
 The merchant receives:
 
-Revenue information
-Order information
-Product/stock intelligence
-Campaign opportunities
-Commerce activity
-Payment/order events
-Audit trail for money-related actions
-## 🚀 Core Features
-1. 🤖 Agent-Readable Product Catalog
+- Revenue information
+- Order information
+- Product/stock intelligence
+- Campaign opportunities
+- Commerce activity
+- Payment/order events
+- Audit trail for money-related actions
+- 
+# 🚀 Core Features
+## 1. 🤖 Agent-Readable Product Catalog
 
 The AI can query the merchant's product catalog and understand:
 
-Product name
-Description
-Category
-Price
-Stock availability
-Product ID
-Tags
+- Product name
+- Description
+- Category
+- Price
+- Stock availability
+- Product ID
+- Tags
 
 Example:
 
@@ -104,11 +105,11 @@ The agent interprets the customer's intent and uses available product informatio
 
 The agent can recommend products based on:
 
-Customer intent
-Product category
-Price
-Availability
-Product characteristics
+- Customer intent
+- Product category
+- Price
+- Availability
+- Product characteristics
 
 It can also suggest complementary products where appropriate.
 
@@ -212,18 +213,18 @@ The payment flow does not trust the frontend alone.
 
 The backend verifies:
 
-razorpay_order_id
-razorpay_payment_id
-razorpay_signature
+- razorpay_order_id
+- razorpay_payment_id
+- razorpay_signature
 
 The signature is verified server-side using the Razorpay secret.
 
 Only after successful verification does the application:
 
-Mark the payment/order as successful
-Confirm the order
-Clear the cart
-Record the successful payment event
+- Mark the payment/order as successful
+- Confirm the order
+- Clear the cart
+- Record the successful payment event
 
 Razorpay specifically recommends server-side signature verification before fulfilling an order.
 
@@ -281,12 +282,12 @@ Customer
 
 This makes the system more transparent and helps answer:
 
-What action happened?
-Who triggered it?
-Which order was affected?
-What amount was involved?
-Was it successful or failed?
-When did it happen?
+- What action happened?
+- Who triggered it?
+- Which order was affected?
+- What amount was involved?
+- Was it successful or failed?
+- When did it happen?
 
 This addresses the requirement that money actions should be explainable and traceable rather than hidden inside the AI agent.
 
@@ -296,10 +297,10 @@ The AI is not given unrestricted access to the database.
 
 Commerce actions go through backend functions/tools such as:
 
-searchProducts
-checkStock
-getProductDetails
-addToCart
+- searchProducts
+- checkStock
+- getProductDetails
+- addToCart
 
 Payment-related actions are additionally protected by backend validation and Razorpay verification.
 
@@ -339,13 +340,13 @@ The merchant dashboard provides a second perspective of the same commerce system
 
 The merchant can view information such as:
 
-Revenue
-Orders
-Product performance
-Products requiring attention
-Commerce activity
-Campaign opportunities
-Audit events
+- Revenue
+- Orders
+- Product performance
+- Products requiring attention
+- Commerce activity
+- Campaign opportunities
+- Audit events
 
 The objective is to move from:
 
@@ -412,35 +413,36 @@ This connects the transaction layer with the merchant revenue-growth side of the
 # 🧰 Tech Stack
 Frontend
 
-React.js
-JavaScript
-CSS
-Lucide React
+- React.js
+- JavaScript
+- CSS
+- Lucide React
 
 Backend
 
-Node.js
-Express.js
-Database
-MongoDB
-Mongoose
+- Node.js
+- Express.js
+- Database
+- MongoDB
+- Mongoose
 
 AI
 
-LLM-powered agent
-Function/tool calling
-Product and commerce tools
+- LLM-powered agent
+- Function/tool calling
+- Product and commerce tools
 
 Payments
-Razorpay Test Mode
-Razorpay Orders API
-Razorpay Checkout
-Server-side payment signature verification
+- Razorpay Test Mode
+- Razorpay Orders API
+- Razorpay Checkout
+- Server-side payment signature verification
 
 Development
-Git
-GitHub
-VS Code
+- Git
+- GitHub
+- VS Code
+
 🔧 Agent Tools
 
 The agent can interact with the commerce backend through dedicated tools.
@@ -491,7 +493,8 @@ Orders
 Product Intelligence
 Campaign Opportunities
 Audit Trail
-🧪 Running the Project Locally
+
+# 🧪 Running the Project Locally
 1. Clone the repository
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd <PROJECT_FOLDER>
@@ -556,13 +559,13 @@ The complete application can be tested using the following flow:
 Razorpay Test Mode provides simulated transactions and does not involve real money.
 
 # 🔒 Security Notes
-Razorpay secrets are stored server-side.
-Test keys are used for development/demo.
-Payment signatures are verified on the backend.
-Stock is validated before adding products.
-Payment success is not trusted from the frontend alone.
-Failed payments do not automatically become successful orders.
-.env files should never be committed.
+- Razorpay secrets are stored server-side.
+- Test keys are used for development/demo.
+- Payment signatures are verified on the backend.
+- Stock is validated before adding products.
+- Payment success is not trusted from the frontend alone.
+- Failed payments do not automatically become successful orders.
+- .env files should never be committed.
 
 # 🎥 Demo Flow
 
@@ -604,15 +607,17 @@ The demo demonstrates the complete AI buyer → merchant transaction loop rather
 
 Potential extensions include:
 
-More advanced personalized recommendations
-Automated campaign execution
-Agent-to-agent commerce
-Customer preference memory
-Advanced merchant analytics
-Webhook-driven payment reconciliation
-Automated upsell/cross-sell campaigns
-More payment methods
-👨‍💻 Team
+- More advanced personalized recommendations
+- Automated campaign execution
+- Agent-to-agent commerce
+- Customer preference memory
+- Advanced merchant analytics
+- Webhook-driven payment reconciliation
+- Automated upsell/cross-sell campaigns
+- More payment methods
+
+## 👨‍💻 Made by:
+Dhruva Keshav Arya
 
 Built for Razorpay Hackathon — Track 01: AI Growth & Agentic Commerce
 
