@@ -61,7 +61,7 @@ The merchant receives:
 - Commerce activity
 - Payment/order events
 - Audit trail for money-related actions
-- 
+
 # 🚀 Core Features
 ## 1. 🤖 Agent-Readable Product Catalog
 
@@ -187,19 +187,32 @@ Our payment flow is:
 
 Customer
    ↓
-Create Order
+AI initiates checkout
    ↓
-Razorpay Checkout
+Backend validates cart
    ↓
-Test Payment
+Backend creates Order
    ↓
-Payment Details
+Razorpay Test Checkout
    ↓
-Server-side Signature Verification
+Customer completes test payment
    ↓
-Order Confirmation
+Razorpay returns payment details
    ↓
-Cart Cleared
+Backend verifies Razorpay signature
+   ↓
+Payment verified?
+   ├── ❌ No → Payment failed → Cart remains
+   │
+   └── ✅ Yes
+          ↓
+      Mark Order as Paid
+          ↓
+      Record Audit Event
+          ↓
+      Clear Cart
+          ↓
+      AI confirms order to Customer
 
 The backend creates the Razorpay order before checkout, following Razorpay's recommended order flow.
 
@@ -616,7 +629,7 @@ Potential extensions include:
 - Automated upsell/cross-sell campaigns
 - More payment methods
 
-## 👨‍💻 Made by:
+## 👨‍💻 Built by:
 Dhruva Keshav Arya
 
 Built for Razorpay Hackathon — Track 01: AI Growth & Agentic Commerce
