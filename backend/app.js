@@ -8,6 +8,10 @@ import mongoose from 'mongoose';
 
 //Routers
 import productRoutes from './routers/productRouters.js';
+import chatRouters from './routers/chatRouters.js';
+import merchantRoutes from './routers/merchantRouters.js';
+import paymentRoutes from './routers/paymentRoutes.js';
+
 
 const app = express();
 
@@ -15,6 +19,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/products', productRoutes);
+app.use('/api/chat', chatRouters);
+app.use('/api/merchant', merchantRoutes);
+app.use('/api/payment', paymentRoutes);
 
 app.get('/', (req, res) => {
   res.json({
