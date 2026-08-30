@@ -56,7 +56,7 @@ const products = [
     category: "Running",
     price: 4500,
     stock: 8,
-    image: "/products/nike-running-shoes.jpg",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
     tags: ["running", "sports", "shoes", "nike"]
   },
   {
@@ -65,7 +65,7 @@ const products = [
     category: "Running",
     price: 3800,
     stock: 10,
-    image: "/products/adidas-training-shoes.jpg",
+    image: "https://images.unsplash.com/photo-1556908534-3ae38017e4e4?w=400",
     tags: ["running", "sports", "shoes", "adidas"]
   },
   {
@@ -74,7 +74,7 @@ const products = [
     category: "Running",
     price: 3200,
     stock: 12,
-    image: "/products/puma-sports-shoes.jpg",
+    image: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=400",
     tags: ["running", "sports", "shoes", "puma"]
   },
   {
@@ -83,7 +83,7 @@ const products = [
     category: "Running",
     price: 1200,
     stock: 12,
-    image: "/products/running-cap.jpg",
+    image: "https://images.unsplash.com/photo-1588668214407-6ea3a6e8d0c6?w=400",
     tags: ["running", "sports", "cap", "accessories"]
   },
   {
@@ -92,7 +92,7 @@ const products = [
     category: "Running",
     price: 1300,
     stock: 18,
-    image: "/products/running-shorts.jpg",
+    image: "https://images.unsplash.com/photo-1618359747347-1d0bea48bb4a?w=400",
     tags: ["running", "sports", "clothing", "shorts"]
   },
   {
@@ -101,7 +101,7 @@ const products = [
     category: "Accessories",
     price: 800,
     stock: 25,
-    image: "/products/sports-socks.jpg",
+    image: "https://images.unsplash.com/photo-1556995522-3644ae57fff3?w=400",
     tags: ["running", "sports", "socks", "accessories"]
   },
 
@@ -112,7 +112,7 @@ const products = [
     category: "Fitness",
     price: 1100,
     stock: 20,
-    image: "/products/gym-gloves.jpg",
+    image: "https://images.unsplash.com/photo-1611672585731-fa32aeb490c5?w=400",
     tags: ["fitness", "gym", "workout", "gloves"]
   },
   {
@@ -121,7 +121,7 @@ const products = [
     category: "Fitness",
     price: 1500,
     stock: 14,
-    image: "/products/yoga-mat.jpg",
+    image: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400",
     tags: ["fitness", "yoga", "workout", "mat"]
   },
   {
@@ -130,7 +130,7 @@ const products = [
     category: "Fitness",
     price: 900,
     stock: 30,
-    image: "/products/resistance-bands.jpg",
+    image: "https://images.unsplash.com/photo-1535438480872-f3be94776144?w=400",
     tags: ["fitness", "gym", "workout", "bands"]
   },
   {
@@ -139,7 +139,7 @@ const products = [
     category: "Fitness",
     price: 2800,
     stock: 9,
-    image: "/products/dumbbell-set.jpg",
+    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400",
     tags: ["fitness", "gym", "weights", "workout"]
   },
   {
@@ -148,7 +148,7 @@ const products = [
     category: "Fitness",
     price: 700,
     stock: 35,
-    image: "/products/sports-water-bottle.jpg",
+    image: "https://images.unsplash.com/photo-1602143407151-7e406b6b45b1?w=400",
     tags: ["fitness", "running", "sports", "bottle"]
   },
 
@@ -159,7 +159,7 @@ const products = [
     category: "Audio",
     price: 3500,
     stock: 11,
-    image: "/products/wireless-headphones.jpg",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
     tags: ["electronics", "audio", "headphones", "wireless"]
   },
   {
@@ -168,7 +168,7 @@ const products = [
     category: "Audio",
     price: 2200,
     stock: 16,
-    image: "/products/bluetooth-speaker.jpg",
+    image: "https://images.unsplash.com/photo-1589003077984-894e133814c9?w=400",
     tags: ["electronics", "audio", "speaker", "bluetooth"]
   },
   {
@@ -177,7 +177,7 @@ const products = [
     category: "Audio",
     price: 2900,
     stock: 13,
-    image: "/products/wireless-earbuds.jpg",
+    image: "https://images.unsplash.com/photo-1590658268537-643a2f11d38f?w=400",
     tags: ["electronics", "audio", "earbuds", "wireless"]
   },
   {
@@ -186,7 +186,7 @@ const products = [
     category: "Wearables",
     price: 4800,
     stock: 7,
-    image: "/products/smart-watch.jpg",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
     tags: ["electronics", "wearables", "fitness", "smartwatch"]
   },
   {
@@ -195,7 +195,7 @@ const products = [
     category: "Accessories",
     price: 1300,
     stock: 22,
-    image: "/products/usb-c-charger.jpg",
+    image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400",
     tags: ["electronics", "charger", "usb-c", "accessories"]
   },
   {
@@ -204,7 +204,7 @@ const products = [
     category: "Accessories",
     price: 3900,
     stock: 8,
-    image: "/products/mechanical-keyboard.jpg",
+    image: "https://images.unsplash.com/photo-1587829191301-7609c8f2b5fe?w=400",
     tags: ["electronics", "keyboard", "gaming", "accessories"]
   },
   {
@@ -213,7 +213,7 @@ const products = [
     category: "Accessories",
     price: 1200,
     stock: 19,
-    image: "/products/wireless-mouse.jpg",
+    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400",
     tags: ["electronics", "mouse", "wireless", "accessories"]
   },
   {
@@ -222,7 +222,7 @@ const products = [
     category: "Accessories",
     price: 1700,
     stock: 15,
-    image: "/products/laptop-stand.jpg",
+    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
     tags: ["electronics", "laptop", "desk", "accessories"]
   },
 
@@ -233,7 +233,7 @@ const products = [
     category: "Clothing",
     price: 3500,
     stock: 15,
-    image: "/products/adidas-sweatshirt.jpg",
+    image: "https://images.unsplash.com/photo-1556821552-107d7cb8593d?w=400",
     tags: ["clothing", "sports", "casual", "adidas"]
   },
   {
@@ -242,7 +242,7 @@ const products = [
     category: "Clothing",
     price: 900,
     stock: 25,
-    image: "/products/cotton-tshirt.jpg",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
     tags: ["clothing", "casual", "tshirt", "cotton"]
   },
   {
@@ -251,7 +251,7 @@ const products = [
     category: "Clothing",
     price: 2400,
     stock: 12,
-    image: "/products/casual-hoodie.jpg",
+    image: "https://images.unsplash.com/photo-1556821552-107d7cb8593d?w=400",
     tags: ["clothing", "hoodie", "casual"]
   },
 
@@ -262,7 +262,7 @@ const products = [
     category: "Travel",
     price: 2500,
     stock: 10,
-    image: "/products/travel-backpack.jpg",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
     tags: ["travel", "backpack", "bags"]
   },
   {
@@ -271,7 +271,7 @@ const products = [
     category: "Bags",
     price: 3000,
     stock: 9,
-    image: "/products/laptop-backpack.jpg",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
     tags: ["travel", "laptop", "backpack", "bags"]
   },
   {
@@ -280,7 +280,7 @@ const products = [
     category: "Travel",
     price: 750,
     stock: 20,
-    image: "/products/travel-organizer.jpg",
+    image: "https://images.unsplash.com/photo-1491637639811-60b2b8b81b3d?w=400",
     tags: ["travel", "organizer", "accessories"]
   },
 
@@ -291,7 +291,7 @@ const products = [
     category: "Fashion",
     price: 1800,
     stock: 17,
-    image: "/products/sunglasses.jpg",
+    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
     tags: ["fashion", "sunglasses", "outdoor"]
   }
 ];

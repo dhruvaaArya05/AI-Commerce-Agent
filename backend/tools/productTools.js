@@ -5,37 +5,6 @@ import Order from "../models/Order.js";
 import { trackEvent } from "../utils/trackEvent.js";
 import { createAuditLog } from "../utils/createAuditLog.js";
 
-// export async function searchProducts(query, maxPrice) {
-//   try {
-//     const filter = {};
-
-//     // Search by name, description, category or tags
-//     if (query) {
-//       filter.$or = [
-//         { name: { $regex: query, $options: "i" } },
-//         { description: { $regex: query, $options: "i" } },
-//         { category: { $regex: query, $options: "i" } },
-//         { tags: { $regex: query, $options: "i" } }
-//       ];
-//     }
-
-//     // Optional price filter
-//     if (maxPrice) {
-//       filter.price = { $lte: maxPrice };
-//     }
-
-//     const products = await Product.find(filter);
-
-//     return products;
-
-//   } catch (error) {
-//     console.error("searchProducts error:", error);
-
-//     return {
-//       error: "Unable to search products"
-//     };
-//   }
-// }
 
 export async function searchProducts(query, maxPrice) {
   try {
@@ -249,14 +218,16 @@ export async function getCart(userId) {
 
     return {
       success: true,
-      items: cart.items.map(item => ({
-        productId: item.productId._id,
-        name: item.productId.name,
-        price: item.productId.price,
-        quantity: item.quantity,
-        image: item.productId.image,
-        subtotal: item.productId.price * item.quantity
-      }))
+      items: cart.items
+        .filter(item => item.productId !== null)
+        .map(item => ({
+          productId: item.productId._id,
+          name: item.productId.name,
+          price: item.productId.price,
+          quantity: item.quantity,
+          image: item.productId.image,
+          subtotal: item.productId.price * item.quantity
+        }))
     };
   } catch (error) {
     console.log("getCart error:", error);
@@ -391,16 +362,18 @@ export async function createOrder(userId) {
 
     const orderItems = [];
     let totalAmount = 0;
+    const validItems = [];
 
+    // Filter out deleted products and validate stock
     for (const item of cart.items) {
       const product = await Product.findById(item.productId);
 
       if (!product) {
-        return {
-          success: false,
-          error: "One of the products in your cart no longer exists"
-        };
+        // Skip deleted products but don't block order
+        continue;
       }
+
+      validItems.push(item);
 
       if (product.stock < item.quantity) {
         return {
@@ -422,8 +395,22 @@ export async function createOrder(userId) {
       totalAmount += subtotal;
     }
 
+    // Remove deleted products from cart
+    if (validItems.length < cart.items.length) {
+      cart.items = validItems;
+      await cart.save();
+    }
+
+    // Check if there are any valid items after filtering
+    if (orderItems.length === 0) {
+      return {
+        success: false,
+        error: "Your cart is empty (all products were unavailable)"
+      };
+    }
+
     // Deduct stock
-    for (const item of cart.items) {
+    for (const item of validItems) {
       const product = await Product.findById(item.productId);
 
       product.stock -= item.quantity;
@@ -496,15 +483,18 @@ export async function prepareCheckout(userId) {
     const items = [];
     let totalAmount = 0;
 
+    // Filter out deleted products from cart
+    const validItems = [];
+
     for (const item of cart.items) {
       const product = await Product.findById(item.productId);
 
       if (!product) {
-        return {
-          success: false,
-          error: "A product in your cart no longer exists"
-        };
+        // Skip deleted products but don't block checkout
+        continue;
       }
+
+      validItems.push(item);
 
       if (product.stock < item.quantity) {
         return {
@@ -526,12 +516,26 @@ export async function prepareCheckout(userId) {
       totalAmount += subtotal;
     }
 
+    // Remove deleted products from cart
+    if (validItems.length < cart.items.length) {
+      cart.items = validItems;
+      await cart.save();
+    }
+
+    // Check if there are any valid items after filtering
+    if (items.length === 0) {
+      return {
+        success: false,
+        error: "Your cart is empty (all products were unavailable)"
+      };
+    }
+
     // Track successful checkout preparation
     await trackEvent({
       userId,
       eventType: "checkout_started",
       metadata: {
-        itemCount: cart.items.length,
+        itemCount: validItems.length,
         totalAmount,
         currency: "INR"
       }
@@ -542,7 +546,7 @@ export async function prepareCheckout(userId) {
       action: "CHECKOUT_STARTED",
       entityType: "Checkout",
       details: {
-        itemCount: cart.items.length,
+        itemCount: validItems.length,
         totalAmount,
         currency: "INR"
       }

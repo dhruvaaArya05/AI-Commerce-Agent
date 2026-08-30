@@ -676,7 +676,7 @@ Thank you for shopping with ShopAI!`,
                     </strong>
                   </div>
 
-                  <button className="checkout-button" onClick={handleCheckout}>
+                  <button className="checkout-button" onClick={() => handleCheckout()}>
                     Proceed to Checkout
                     <ArrowRight size={16} />
                   </button>
