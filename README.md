@@ -436,7 +436,8 @@ Backend
 
 - Node.js
 - Express.js
-- Database
+
+Database
 - MongoDB
 - Mongoose
 
@@ -638,6 +639,7 @@ Potential extensions include:
 
 ## 👨‍💻 Built by:
 Dhruva Keshav Arya
+dhruvaa866@gmail.com
 
 Built for Razorpay Hackathon — Track 01: AI Growth & Agentic Commerce
 
