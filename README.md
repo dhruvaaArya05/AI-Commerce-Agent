@@ -14,6 +14,10 @@ The goal is simple:
 
 Make a merchant transactable by an AI buyer end-to-end while keeping every money action explainable, bounded, and gated.
 
+# Screenshots
+<img width="1915" height="912" alt="Screenshot 2026-08-30 183113" src="https://github.com/user-attachments/assets/96d52668-b306-413f-b4cd-e3a2a36eba1a" />
+<img width="1886" height="904" alt="Screenshot 2026-08-30 183123" src="https://github.com/user-attachments/assets/ea4c3d1e-923d-4a54-b8e6-22e78868d288" />
+
 # 🎯 Problem
 
 Traditional e-commerce requires customers to manually:
